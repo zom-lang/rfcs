@@ -45,6 +45,7 @@ What other designs have been considered? What is the impact of not doing this? A
 Why should we *not* do this?
 
 # Unresolved questions
+[unresolved-questions]: #unresolved-questions
 
 What parts of the design are still TBD ?
 What part of the design you expect through the RFC process ?
