@@ -42,7 +42,7 @@ What other designs have been considered? What is the impact of not doing this? A
 # Drawbacks
 [drawbacks]: #drawbacks
 
-Why should we *not* do this?
+Why should we *not* do this? Do you have an answer/partial answer why we should still do this?
 
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
