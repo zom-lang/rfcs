@@ -1,7 +1,7 @@
 - **Feature Name:** `comments`
 - **Start date:** 2023-07-02
-- **RFC PR:** [zom-lang/evolution#0000](https://github.com/zom-lang/evolution/pull/0000)
-- **Zom Issue:** [zom-lang/zom#0000](https://github.com/zom-lang/zom/issues/0000)
+- **RFC PR:** [zom-lang/evolution#0007](https://github.com/zom-lang/evolution/pull/0007)
+- **Zom Issue:** [zom-lang/zom#0014](https://github.com/zom-lang/zom/issues/0014)
 
 # Summary
 [summary]: #summary
