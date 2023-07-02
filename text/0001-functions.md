@@ -1,7 +1,7 @@
 - **Feature Name:** `functions`
 - **Start date:** 2023-07-01
 - **RFC PR:** [zom-lang/evolution#0001](https://github.com/zom-lang/evolution/pull/0001)
-- **Zom Issue:** [zom-lang/zom#0000](https://github.com/zom-lang/zom/issues/0000)
+- **Zom Issue:** [zom-lang/zom#0040](https://github.com/zom-lang/zom/issues/0040)
 
 # Summary
 [summary]: #summary
