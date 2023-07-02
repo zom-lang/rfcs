@@ -6,12 +6,13 @@
 # Summary
 [summary]: #summary
 
-Add function definition and function call in Zom.
+Add function definition, function declaration and function call in Zom.
 
 # Motivation
 [motivation]: #motivation
 
-Like many other programming language, Zom need function definition, function declaration and function call.
+Like many other programming language, Zom need functions, because this is the base of all functionnal programming language and because Zom will be
+object oriented and a functional programming language, this is mandatory.
 
 # Guide-level explanation
 [guide-level-explanation]: #guide-level-explanation
@@ -87,6 +88,36 @@ as type match.
 
 Functions have name mangling, to solve some known issues. Zom uses the [`Itanium C++ ABI name mangling rules`](http://itanium-cxx-abi.github.io/cxx-abi/abi.html#mangling).
 
+Here is a more grammar-style,
+
+## Function definition
+
+function definition,
+```
+func $ident( [ $ident : $type , ]* ) ($type)? $code_expr
+```
+
+### Return statement
+
+In a function, code expression, a return statement
+```
+return [ $expr ]? ;
+```
+
+## Function declaration
+
+function declaration,
+```
+extern $string_literal func $ident( [ $ident : $type , ]* ) ($type)? ;
+```
+
+## Function call
+
+In a code expression; a function call,
+```
+$ident ( [ $expr , ]* ) ;
+```
+
 # Alternatives
 [alternatives]: #alternatives
 
@@ -95,9 +126,9 @@ Zom could have been using the keyword `fn` instead of `func`, because it's small
 # Drawbacks
 [drawbacks]: #drawbacks
 
-Why should we *not* do this?
+> Why should we *not* do this?
 
-We should, it's mandatory for all programming languages.
+We should, it's mandatory for all functional programming languages.
 
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
