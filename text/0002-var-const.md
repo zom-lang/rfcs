@@ -62,17 +62,34 @@ const bar = 16;
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
 
-This is the technical portion of the RFC. Explain the design such as contributor to the compiler don't have to guess who, 
-in details this needs to be implemented :
+The grammars are :
 
-- You can explain previous examples in details.
-- Interaction of your feature with existing feature is clear.
-- Corner cases are dissected by example.
+## `const` statement
+
+```
+const $Ident = $Expr;
+```
+
+## `var` statement
+
+```
+var $Ident = $Expr;
+```
+
+## `var` assignement
+
+```
+$Ident = $Expr;
+```
+
+## How that works ?
+
+`const` will be stored in the stack, but the compiler will ensure that you will never change the stored value.
+
+`var` will be stored in the stack, you will be able to change the stored value.
 
 # Alternatives
 [alternatives]: #alternatives
-
-What other designs have been considered? What is the impact of not doing this? And why don't do this ?
 
 We could use instead of `var`, `let mut` and `let` for `const` like Rust; but I think it's better to use `var` for mutable data because `var` means
 variable. And it's better to use `const` because `const` means constant.
@@ -87,5 +104,4 @@ Make lints warn when a `const` could be used instead of a `var`.
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
 
-Is `const` an SSA form like in LLVM, without explicitly stored in the stack ?
-Or will it be explicitly stored in the stack and the compiler will check if `const` are not reassigned ?
+No unresolved questions for the moment.
