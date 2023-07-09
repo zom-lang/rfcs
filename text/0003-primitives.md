@@ -46,8 +46,8 @@ Booleans, with the type name `bool`, is a primitive integer type, 1 bit long, it
 
 ## Floating point number.
 
-Zom follows the IEEE 754 floating point number standard; `f16`, `f32`, `f64`, `f128` is respcetivly Half precision, single precision, double precision, quadruple 
-precision floating point number.
+Zom follows the IEEE 754 floating point number standard; `f16`, `f32`, `f64`, `f128` is respectively Half precision, single precision, double precision,
+quadruple precision floating point number.
 
 |  Name |                                 Range                                 |
 | ----- | --------------------------------------------------------------------- |
@@ -72,25 +72,25 @@ precision floating point number.
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
 
-This is the technical portion of the RFC. Explain the design such as contributor to the compiler don't have to guess who, 
-in details this needs to be implemented :
+Integers type, follows LLVM integers types, and `usize` and `isize` is replaced at compile time by the respective `uNN` or `iNN`.
 
-- You can explain previous examples in details.
-- Interaction of your feature with existing feature is clear.
-- Corner cases are dissected by example.
+Floating point number match the IEEE 754 standard and map `f16`, `f32`, `f64`, `f128` map respectively to LLVM, `half`, `float`, `double`
+and `fp128`.
+
+**TODO: Char and String slice**
 
 # Alternatives
 [alternatives]: #alternatives
 
-What other designs have been considered? What is the impact of not doing this? And why don't do this ?
+For integers and floating point types, we could use the same as C / C++, but I think it's better to know the length directly by the name.
+And very often in C / C++ project they redefine the name of integer types to a thing similar to `iNN` or `uNN`.
 
 # Drawbacks
 [drawbacks]: #drawbacks
 
-Why should we *not* do this? Do you have an answer/partial answer why we should still do this?
+*No drawbacks found for now.*
 
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
 
-What parts of the design are still TBD ?
-What part of the design you expect through the RFC process ?
+*No unresolved questions for now.*
