@@ -3,49 +3,177 @@
 - **RFC PR:** [zom-lang/evolution#0004](https://github.com/zom-lang/evolution/pull/0004)
 - **Zom Issue:** [zom-lang/zom#0000](https://github.com/zom-lang/zom/issues/0000)
 
+
 # Summary
 [summary]: #summary
 
-One paragraph explenation of the feature.
+This RFC clarify which operator their is, what they do and introduce the operator precendence table.
+
 
 # Motivation
 [motivation]: #motivation
 
-Why are we doing? What is the expected outcome?
+We are doing this to clarify operators in Zom and their operator precedence value.
+
 
 # Guide-level explanation
 [guide-level-explanation]: #guide-level-explanation
 
-Imagine your proposal is already included in the language and explain it to another Zom programmer. That generally means:
+## Operator table
 
-- Introducing new named concepts
-- Explain the feature with examples
-- If there is, provide sample error or warnings messages.
-- Discuss how your feature impact the ability to read or understand Zom source code. 
-- Will the proposed feature make code esaier to maintain / read ? Why ?
+|   Op   |            Name            | Technical Name |  Type  |
+| ------ | -------------------------- | -------------- | ------ |
+|  `*`   | `Multiplication`           | `OP_MUL`       | Binary |
+|  `/`   | `Division`                 | `OP_DIV`       | Binary |
+|  `%`   | `Remainder`                | `OP_REM`       | Binary |
+|  `+`   | `Addition`                 | `OP_ADD`       | Binary |
+|  `-`   | `Substraction`             | `OP_SUB`       | Binary |
+|  `>>`  | `Right shift`              | `OP_RSHIFT`    | Binary |
+|  `<<`  | `Left shift`               | `OP_LSHIFT`    | Binary |
+|  `<`   | `Less than`                | `OP_COMP_LT`   | Binary |
+|  `>`   | `Greater than`             | `OP_COMP_GT`   | Binary |
+|  `<=`  | `Less than or equal to`    | `OP_COMP_LTE`  | Binary |
+|  `>=`  | `Greater than or equal to` | `OP_COMP_GTE`  | Binary |
+|  `==`  | `Equal to`                 | `OP_COMP_EQ`   | Binary |
+|  `!=`  | `Not equal to`             | `OP_COMP_NE`   | Binary |
+|  `&`   | `Bitwise AND`              | `OP_BIT_AND`   | Binary |
+|  `^`   | `Bitwise XOR`              | `OP_BIT_XOR`   | Binary |
+|  `\|`  | `Bitwise OR`               | `OP_BIT_OR`    | Binary |
+|  `~`   | `Bitwise NOT`              | `OP_BIT_NOT`   |*Unary* |
+|  `&&`  | `Logical AND`              | `OP_LOGIC_AND` | Binary |
+| `\|\|` | `Logical OR`               | `OP_LOGIC_OR`  | Binary |
+|  `!`   | `Logical NOT`              | `OP_LOGIC_NOT` |*Unary* |
+|  `=`   | `Simple assignement`       | `OP_EQ`        | Binary |
+|  `.`   | `Member access (OOP)`      | `OP_DOT`       | Binary |
+
+### Multiplication
+
+e.g: `a * b`
+
+### Division
+
+e.g: `a / b`
+
+### Remainder
+
+e.g: `a % b`
+
+### Addition
+
+e.g: `a + b`
+
+### Substraction
+
+e.g: `a - b`
+
+### Right shift
+
+e.g: `a >> b`
+
+### Left shift
+
+e.g: `a << b`
+
+### Less than
+
+e.g: `a < b`
+
+### Greater than
+
+e.g: `a > b`
+
+### Less than or equal to
+
+e.g: `a <= b`
+
+### Greater than or equal to
+
+e.g: `a >= b`
+
+### Equal to
+
+e.g: `a == b`
+
+### Not equal to
+
+e.g: `a != b`
+
+### Bitwise AND
+
+e.g: `a & b`
+
+### Bitwise XOR
+
+e.g: `a ^ b`
+
+### Bitwise OR
+
+e.g: `a | b`
+
+### Bitwise NOT
+
+e.g: `~a`
+
+
+### Logical AND
+
+e.g: `a && b`
+
+### Logical OR
+
+e.g: `a || b`
+
+### Logical NOT
+
+e.g: `!a`
+
+### Simple assignement
+
+e.g: `a = b` or `a = 12`
+
+### Member access (OOP)
+
+*This operation will not be covered in details, in this RFC. It will be covered in the RFC about struct.*
+
+e.g: `a.b`
+
 
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
 
-This is the technical portion of the RFC. Explain the design such as contributor to the compiler don't have to guess who, 
-in details this needs to be implemented :
+## Operator precedence table
 
-- You can explain previous examples in details.
-- Interaction of your feature with existing feature is clear.
-- Corner cases are dissected by example.
+|             Ops              |  Technical Name  | Value |
+| ---------------------------- | ---------------- | ----- |
+| `OP_DOT`                     | `PR_DOT`         |   13  |
+| `OP_LOGIC_NOT`, `OP_BIT_NOT` | `PR_NOT`         |   12  |
+| `OP_MUL`, `OP_DIV`, `OP_REM` | `PR_MUL_DIV_REM` |   11  |
+| `OP_ADD`, `OP_SUB`           | `PR_ADD_SUB`     |   10  |
+| `OP_RSHIFT`, `OP_LSHIFT`     | `PR_SHIFT`       |   9   |
+| `OP_COMP_LT`, `OP_COMP_GT`, </br>
+`OP_COMP_LTE`, `OP_COMP_GTE`   | `PR_COMP`        |   8   |
+| `OP_COMP_EQ`, `OP_COMP_NE`   | `PR_COMP_EQ_NE`  |   7   |
+| `OP_BIT_AND`                 | `PR_BIT_AND`     |   6   |
+| `OP_BIT_XOR`                 | `PR_BIT_XOR`     |   5   |
+| `OP_BIT_OR`                  | `PR_BIT_OR`      |   4   |
+| `OP_LOGIC_AND`               | `PR_LOGIC_AND`   |   3   |
+| `OP_LOGIC_OR`                | `PR_LOGIC_OR`    |   2   |
+| `OP_EQ`                      | `PR_EQ`          |   1   |
+
 
 # Alternatives
 [alternatives]: #alternatives
 
-What other designs have been considered? What is the impact of not doing this? And why don't do this ?
+*No alternatives found for now.*
+
 
 # Drawbacks
 [drawbacks]: #drawbacks
 
-Why should we *not* do this? Do you have an answer/partial answer why we should still do this?
+*No drawbacks found for the moment.*
+
 
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
 
-What parts of the design are still TBD ?
-What part of the design you expect through the RFC process ?
+*No unresolved questions for now.*
