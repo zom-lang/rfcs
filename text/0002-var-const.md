@@ -1,7 +1,7 @@
 - **Feature Name:** `var-const`
 - **Start date:** 2023-07-02
 - **RFC PR:** [zom-lang/evolution#0002](https://github.com/zom-lang/evolution/pull/0002)
-- **Zom Issue:** [zom-lang/zom#0000](https://github.com/zom-lang/zom/issues/0000)
+- **Zom Issue:** [zom-lang/zom#0041](https://github.com/zom-lang/zom/issues/0041)
 
 # Summary
 [summary]: #summary
@@ -85,8 +85,9 @@ $Ident = $Expr;
 ## How that works ?
 
 `const` will be stored in the stack, but the compiler will ensure that you will never change the stored value.
-
 `var` will be stored in the stack, you will be able to change the stored value.
+
+> Note that if the `mem2reg` pass is enabled, LLVM will promote stack memory (so `const` or `var`) and put it into register(s).
 
 # Alternatives
 [alternatives]: #alternatives
@@ -99,9 +100,9 @@ variable. And it's better to use `const` because `const` means constant.
 
 ### Because the `const` keyword is often used in other programming language to store values that is used multiple time but not like a variable; Zom programmers could always use `var`.
 
-Make lints warn when a `const` could be used instead of a `var`.
+To solve this issue, we can make a lint warn when a `const` could be used instead of a `var`.
 
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
 
-No unresolved questions for the moment.
+*No unresolved questions for the moment.*
