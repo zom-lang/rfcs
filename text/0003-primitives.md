@@ -69,6 +69,15 @@ quadruple precision floating point number.
 
 *This follows UTF-8.*
 
+## Void
+
+`void` is a zero-size type that is used when you don't want to return nothing from a function.
+
+## `undefined`
+
+`undefined` is a special value that is used when you want to initialize a `var` or a `const` later. If you use a `var` or `const` and if it's value is
+undefined, you will have `use of undefined var / const` error.
+
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
 
