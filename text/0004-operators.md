@@ -22,7 +22,7 @@ We are doing this to clarify operators in Zom and their operator precedence valu
 ## Operator table
 
 |   Op   |            Name            | Technical Name |  Type  |
-| ------ | -------------------------- | -------------- | ------ |
+| :----- | :------------------------  | :------------- | :----: |
 |  `*`   | `Multiplication`           | `OP_MUL`       | Binary |
 |  `/`   | `Division`                 | `OP_DIV`       | Binary |
 |  `%`   | `Remainder`                | `OP_REM`       | Binary |
@@ -45,6 +45,10 @@ We are doing this to clarify operators in Zom and their operator precedence valu
 |  `!`   | `Logical NOT`              | `OP_LOGIC_NOT` |*Unary* |
 |  `=`   | `Simple assignement`       | `OP_EQ`        | Binary |
 |  `.`   | `Member access (OOP)`      | `OP_DOT`       | Binary |
+|  `&`   | `Borrow`                   | `OP_BORROW`    |*Unary* |
+| `&var` | `Variable borrow`          | `OP_VAR_BORROW`|*Unary* |
+|  `*`   | `Dereferencing`            | `OP_DEREF`     |*Unary* |
+|  `-`   | `Unary minus`              | `OP_MINUS`     |*Unary* |
 
 ### Multiplication
 
@@ -137,28 +141,49 @@ e.g: `a = b` or `a = 12`
 
 e.g: `a.b`
 
+### Borrowing
+
+*This operation will not be covered in details, in this RFC. It will be covered in the RFC about references and liveness.*
+
+e.g: `&a`
+
+### Variable Borrowing
+
+*This operation will not be covered in details, in this RFC. It will be covered in the RFC about references and liveness.*
+
+e.g: `&var a`
+
+### Dereferencing
+
+*This operation will not be covered in details, in this RFC. It will be covered in the RFC about references and liveness.*
+
+e.g: `*a`
+
+### Unary minus
+
+e.g: `-a`
 
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
 
 ## Operator precedence table
 
-|             Ops              |  Technical Name  | Value |
-| ---------------------------- | ---------------- | ----- |
-| `OP_DOT`                     | `PR_DOT`         |   13  |
-| `OP_LOGIC_NOT`, `OP_BIT_NOT` | `PR_NOT`         |   12  |
-| `OP_MUL`, `OP_DIV`, `OP_REM` | `PR_MUL_DIV_REM` |   11  |
-| `OP_ADD`, `OP_SUB`           | `PR_ADD_SUB`     |   10  |
-| `OP_RSHIFT`, `OP_LSHIFT`     | `PR_SHIFT`       |   9   |
-| `OP_COMP_LT`, `OP_COMP_GT`, </br>
-`OP_COMP_LTE`, `OP_COMP_GTE`   | `PR_COMP`        |   8   |
-| `OP_COMP_EQ`, `OP_COMP_NE`   | `PR_COMP_EQ_NE`  |   7   |
-| `OP_BIT_AND`                 | `PR_BIT_AND`     |   6   |
-| `OP_BIT_XOR`                 | `PR_BIT_XOR`     |   5   |
-| `OP_BIT_OR`                  | `PR_BIT_OR`      |   4   |
-| `OP_LOGIC_AND`               | `PR_LOGIC_AND`   |   3   |
-| `OP_LOGIC_OR`                | `PR_LOGIC_OR`    |   2   |
-| `OP_EQ`                      | `PR_EQ`          |   1   |
+|      Operators       |  Technical Name  | Value |
+| :------------------- | :--------------- | :---: |
+| `.`                  | `PR_DOT`         |   13  |
+| `!`, `~`, `&`, <br/>
+  `&var`, `*`, `-`     | `PR_UNARY`       |   12  |
+| `*`, `/`, `%`        | `PR_MUL_DIV_REM` |   11  |
+| `+`, `-`             | `PR_ADD_SUB`     |   10  |
+| `>>`, `<<`           | `PR_SHIFT`       |   9   |
+| `<`, `>`, `<=`, `>=` | `PR_COMP`        |   8   |
+| `==`, `!=`           | `PR_COMP_EQ_NE`  |   7   |
+| `&`                  | `PR_BIT_AND`     |   6   |
+| `^`                  | `PR_BIT_XOR`     |   5   |
+| `\|`                 | `PR_BIT_OR`      |   4   |
+| `&&`                 | `PR_LOGIC_AND`   |   3   |
+| `\|\|`               | `PR_LOGIC_OR`    |   2   |
+| `=`                  | `PR_EQ`          |   1   |
 
 
 # Alternatives
@@ -177,3 +202,6 @@ e.g: `a.b`
 [unresolved-questions]: #unresolved-questions
 
 *No unresolved questions for now.*
+
+> ## Note
+> If an operator is added, you can open a pull request to add it to this RFC.
