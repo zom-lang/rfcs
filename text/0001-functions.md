@@ -45,10 +45,10 @@ func foo(bar: i16) i16 {
 }
 ```
 
-If a function has no return type or a return type of void, you can just use the `return` statement :
+If a function has void return type, you can just use the `return` statement :
 
 ```Zom
-func foo(bar: i16) {
+func foo(bar: i16) void {
     (* do some stuff *)
     return;
     (* but not here *)
@@ -74,7 +74,7 @@ func foo(bar: i16, baz: i16) i16 {
     return (bar + 9) / 2 * baz;
 }
 
-func main() {
+func main() void {
     foo(12, 32);
 }
 ```
@@ -93,28 +93,28 @@ Here is a more grammar-style,
 ## Function definition
 
 function definition,
-```
-func $ident( [ $ident : $type , ]* ) ($type)? $code_expr
+```ebnf
+func $ident( [ $ident : $type , ]* ) $type $code_expr
 ```
 
 ### Return statement
 
 In a function, code expression, a return statement
-```
+```ebnf
 return [ $expr ]? ;
 ```
 
 ## Function declaration
 
 function declaration,
-```
-extern $string_literal func $ident( [ $ident : $type , ]* ) ($type)? ;
+```ebnf
+extern $string_literal func $ident( [ $ident : $type , ]* ) $type ;
 ```
 
 ## Function call
 
 In a code expression; a function call,
-```
+```ebnf
 $ident ( [ $expr , ]* ) ;
 ```
 
