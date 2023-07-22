@@ -1,5 +1,11 @@
 # ⚡ Zom Language Evolution
 
+[![lines of code](https://tokei.rs/b1/github/zom-lang/evolution)](https://github.com/Aaronepower/tokei)
+[![License][licence-badge]](https://github.com/zom-lang/zom/tree/main#license)
+[![discord server](https://img.shields.io/discord/1115546838729240596?label=Discord%20Server&color=5765F2)](https://discord.gg/pcDknYP9Bf)
+
+[licence-badge]: https://img.shields.io/badge/License-%20Apache--2.0-lightblue
+
 This repository contains **Request For Comments** (RFC), that describe the whole Zom Programming Language and its libraries.
 The RFC process is intended to provide a consistent and controlled path for changes to Zom.
 
