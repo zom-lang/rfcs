@@ -75,13 +75,15 @@ quadruple precision floating point number.
 
 ## `undefined`
 
-`undefined` is a special value that is used when you want to initialize a `var` or a `const` later. If you use a `var` or `const` and if it's value is
-undefined, you will have `use of undefined var / const` error.
+`undefined` is a special value that is used when you want to initialize a `var` or a `const` later. But:
+- If you use a `var` or `const` and if it's value is undefined, you will have `use of undefined var / const` error.
+- It you pass a `undefined` value to a function or method (or undefined var/const) you will have the `cannot pass undefined value to function` / `method` error.
+- If you return from a function / method an `undefined`, you will have the `return a value / variable undefined in a function`
 
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
 
-Integers type, follows LLVM integers types, and `usize` and `isize` is replaced at compile time by the respective `uNN` or `iNN`.
+The integers types, follows LLVM integers types. `usize` and `isize` is replaced at compile time by the respective `uNN` or `iNN`.
 
 Floating point number match the IEEE 754 standard and map `f16`, `f32`, `f64`, `f128` map respectively to LLVM, `half`, `float`, `double`
 and `fp128`.
