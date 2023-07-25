@@ -1,6 +1,6 @@
 - **Feature Name:** (fill me with an unique ident, like `my-feature`)
 - **Start date:** (fill me with todays date, YYYY-MM-DD)
-- **RFC PR:** [zom-lang/evolution#0000](https://github.com/zom-lang/evolution/pull/0000)
+- **RFC PR:** [zom-lang/rfcs#0000](https://github.com/zom-lang/rfcs/pull/0000)
 - **Zom Issue:** [zom-lang/zom#0000](https://github.com/zom-lang/zom/issues/0000)
 
 # Summary
