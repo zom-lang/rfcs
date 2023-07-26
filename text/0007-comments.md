@@ -1,51 +1,68 @@
 - **Feature Name:** `comments`
 - **Start date:** 2023-07-02
-- **RFC PR:** [zom-lang/evolution#0007](https://github.com/zom-lang/evolution/pull/0007)
+- **RFC PR:** [zom-lang/rfcs#0007](https://github.com/zom-lang/rfcs/pull/0007)
 - **Zom Issue:** [zom-lang/zom#0014](https://github.com/zom-lang/zom/issues/0014)
 
 # Summary
 [summary]: #summary
 
-One paragraph explenation of the feature.
+This feature bring comments to Zom; line comments with two slashes `//` and
+block comments starting with `/*` and finishing with `*/`.
 
 # Motivation
 [motivation]: #motivation
 
-Why are we doing? What is the expected outcome?
+*No motivation just logic, commenting code is mandatory to keep the code clear.*
 
 # Guide-level explanation
 [guide-level-explanation]: #guide-level-explanation
 
-Imagine your proposal is already included in the language and explain it to another Zom programmer. That generally means:
+## Line comment
 
-- Introducing new named concepts
-- Explain the feature with examples
-- If there is, provide sample error or warnings messages.
-- Discuss how your feature impact the ability to read or understand Zom source code. 
-- Will the proposed feature make code esaier to maintain / read ? Why ?
+A line comment start with two slashes `//` and end until the line feed, in
+ascii 0x`0A`.
+
+e.g:
+```Zom
+// this is a line comment.
+```
+
+## Block comment
+
+A block comment start with a slash and a start `/*` and end with a start
+and a slah, `*/`.
+
+e.g:
+```Zom
+/*
+   This is a block comment.
+   it can be multiple lines long.
+*/
+```
+
 
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
 
-This is the technical portion of the RFC. Explain the design such as contributor to the compiler don't have to guess who, 
-in details this needs to be implemented :
-
-- You can explain previous examples in details.
-- Interaction of your feature with existing feature is clear.
-- Corner cases are dissected by example.
+The content of comments are ignored in the compiler, and nothing happen
+with them.
 
 # Alternatives
 [alternatives]: #alternatives
 
-What other designs have been considered? What is the impact of not doing this? And why don't do this ?
+We could use hastag for line comments but doc comment with hashtag will
+look like that `#/` or `#!`, it's not very convenient. But with slashes,
+doc-comment look like that `///` and `//!`.
+
+And we could use `(*` and `*)` for block comments like in OCaml but if we
+use `//`, using `/*` and `*/` is the most idiomatic.
 
 # Drawbacks
 [drawbacks]: #drawbacks
 
-Why should we *not* do this? Do you have an answer/partial answer why we should still do this?
+*No drawbacks*
 
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
 
-What parts of the design are still TBD ?
-What part of the design you expect through the RFC process ?
+*No unresolved questions*
