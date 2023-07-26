@@ -203,5 +203,5 @@ e.g: `-a`
 
 *No unresolved questions for now.*
 
-> ## Note
-> If an operator is added, you can open a pull request to add it to this RFC.
+> ### Note
+> If an operator is added, you can add a note to this RFC that a new operator was been created, after the `#operator-table` section.
