@@ -28,9 +28,7 @@ func foo(bar: i16, baz: i16) i16 {
 
 Function definition start with the `func` keyword, followed by an identifier: in this example, `foo`; and arguments in parenthesis with 
 there type specified: in this example, `bar` and `baz`. And a return type after the parenthesis: in this example, an `i16`. And after there 
-is a block code expression that contains expressions, separated by semi colon. 
-
-By defult Zom uses the C calling convention for simple call of Zom functions into C code and vice versa.
+is a block code expression that contains expressions, separated by semi colon.
 
 ### Return statement
 
