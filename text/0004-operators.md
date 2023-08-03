@@ -1,6 +1,6 @@
 - **Feature Name:** `operators`
 - **Start date:** 2023-07-02
-- **RFC PR:** [zom-lang/evolution#0004](https://github.com/zom-lang/evolution/pull/0004)
+- **RFC PR:** [zom-lang/rfcs#0004](https://github.com/zom-lang/rfcs/pull/0004)
 - **Zom Issue:** [zom-lang/zom#0000](https://github.com/zom-lang/zom/issues/0000)
 
 
