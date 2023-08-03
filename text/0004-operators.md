@@ -204,4 +204,4 @@ e.g: `-a`
 *No unresolved questions for now.*
 
 > ### Note
-> If an operator is added, you can add a note to this RFC that a new operator was been created, after the `#operator-table` section.
+> If an operator is added, you can add a note to this RFC that a new operator was been created or removed, after the `#operator-table` section.
