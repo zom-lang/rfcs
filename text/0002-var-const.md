@@ -1,6 +1,6 @@
 - **Feature Name:** `var-const`
 - **Start date:** 2023-07-02
-- **RFC PR:** [zom-lang/evolution#0002](https://github.com/zom-lang/evolution/pull/0002)
+- **RFC PR:** [zom-lang/rfcs#0002](https://github.com/zom-lang/rfcs/pull/0002)
 - **Zom Issue:** [zom-lang/zom#0041](https://github.com/zom-lang/zom/issues/0041)
 
 # Summary
