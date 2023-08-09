@@ -6,12 +6,15 @@
 # Summary
 [summary]: #summary
 
-One paragraph explenation of the feature.
+A struct type is a heterogeneous product of other types, called the fields of the type.
+A struct definition is a nominal struct type defined with the keyword `struct` in a
+const, global variable because Zom treat type as value.
 
 # Motivation
 [motivation]: #motivation
 
-Why are we doing? What is the expected outcome?
+We expect with structs, that function prototypes will be cleaner and bundling data &
+functionnalities will be easier.
 
 # Guide-level explanation
 [guide-level-explanation]: #guide-level-explanation
@@ -25,6 +28,33 @@ another Zom programmer. That generally means:
 - Discuss how your feature impact the ability to read or understand Zom
   source code.
 - Will the proposed feature make code esaier to maintain / read ? Why ?
+
+## Struct definition
+
+Their are two types of struct definition;
+* tuple struct definition where fields doesn't have name
+* and named field struct definiton
+
+### Tuple like
+
+To define a new struct without named fields, you first create a new const with
+a Upper Camel Case name. Followed by the keyword `struct` and type(s) separated
+by commas in parenthesis.
+
+e.g:
+```zom
+const 3DCoordonates = struct (
+  u32,
+  u32,
+  u32
+)
+```
+
+### Named fields
+
+To define a new struct with named fields, you first create a new const with an Upper
+Camel Case name; And then the keyword `struct` and a field pair separated with commas.
+A field pair consist of an identifier
 
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
