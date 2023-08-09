@@ -4,7 +4,6 @@ about: Submit an RFC proposal pull request.
 title: 'rfc: `my-feature`'
 labels: RFC-proposal
 assignees: ''
-
 ---
 
 ### Human readable RFC name
