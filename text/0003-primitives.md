@@ -1,7 +1,7 @@
 - **Feature Name:** `primitives`
 - **Start date:** 2023-07-02
 - **RFC PR:** [zom-lang/evolution#0003](https://github.com/zom-lang/evolution/pull/0003)
-- **Zom Issue:** [zom-lang/zom#0000](https://github.com/zom-lang/zom/issues/0000)
+- **Zom Issue:** [zom-lang/zom#0051](https://github.com/zom-lang/zom/issues/0051)
 
 # Summary
 [summary]: #summary
@@ -103,7 +103,7 @@ map respectively to LLVM, `half`, `float`, `double` and `fp128`.
 
 | Number literals | Example |
 | :-------------- | :-----: |
-| Decimal integer | `98_222`|
+| Decimal integer | `98222` |
 | Hex integer     | `0xff`  |
 | Floating-point  | `987.65`|
 > Future RFC may add octal and binary integers literal and advanced floating point
@@ -164,4 +164,4 @@ similar to `iNN` or `uNN`.
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
 
-*No unresolved questions for now.*
+*No unresolved questions.*
