@@ -1,3 +1,4 @@
+# ⚠️ RFC process temporarly stopped, see [#9](https://github.com/zom-lang/rfcs/issues/9)
 # ⚡ Zom RFCs
 [Zom RFCs]: #⚡-zom-rfcs
 
