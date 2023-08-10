@@ -7,12 +7,17 @@
 [summary]: #summary
 
 This RFC bring primitive types, like integers, floating point number, strings, char;
-and primitive values, like `true` and `false`.
+and primitive values, `true`, `false` and `undefined`.
 
 # Motivation
 [motivation]: #motivation
 
-*No interest, primitive types are mandatory for all programming languages*
+Primitive types are useful and mandatory ways to store numbers, string and char.
+
+Add an `undefined` is useful when you want to create a variable and initialize it later.
+But we need to be carful, because if function can return `undefined` the caller would need
+to check if it's not `undefined`. This is why function cannot return `undefined` and variable
+cannot be used if they are undefined.
 
 # Guide-level explanation
 [guide-level-explanation]: #guide-level-explanation
@@ -29,7 +34,7 @@ and primitive values, like `true` and `false`.
 |  `i128`  | -(2^127) to +(2^127 - 1)                                 |
 |  `isize` | -(2^*XLEN*) to +(2^*XLEN* - 1), *see below for more info*|
 |          |                                                          |
-|*Unsigned*| *Unsigned number, without two's complement*              |
+|*Unsigned*| *Unsigned integers*                                      |
 |  `u8`    | 0 to 255                                                 |
 |  `u16`   | 0 to 65_535                                              |
 |  `u32`   | 0 to 4_294_967_295                                       |
@@ -46,6 +51,8 @@ target, it will be 8 bytes.
 Booleans, with the type name `bool`, is a primitive integer type, 1 bit long, it can be
 mapped to LLVM `u1`. Their is two primitive values, with `bool`; `true` is 1 and `false`
 is 0.
+
+> `true` and `false` are treated as keywords.
 
 ## Floating point number.
 
@@ -88,7 +95,9 @@ a `const` later. But:
 - It you pass a `undefined` value to a function or method (or undefined var/const)
   you will have the `cannot pass undefined value to function` / `method` error.
 - If you return from a function / method an `undefined`, you will have the `return
-  a value / variable undefined in a function`
+  an undefined expression`
+
+> `undefined` is treated as a keyword
 
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
@@ -153,8 +162,7 @@ const simple_quote = "'"; // contains -> '
 
 For integers and floating point types, we could use the same as C / C++, but I think
 it's better to know the length directly by the name for a system programming language.
-And very often in C / C++ project they redefine the name of integer types to a thing
-similar to `iNN` or `uNN`.
+And often in C / C++ project developers use `stdint.h`.
 
 # Drawbacks
 [drawbacks]: #drawbacks
@@ -164,4 +172,4 @@ similar to `iNN` or `uNN`.
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
 
-*No unresolved questions.*
+Do we accept 0 and 1 as boolean literals ?
