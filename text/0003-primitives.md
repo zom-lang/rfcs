@@ -60,17 +60,17 @@ Zom follows the IEEE 754 floating point number standard; `f16`, `f32`, `f64`, `f
 respectively Half precision, single precision, double precision,
 quadruple precision floating point number.
 
-|  Name |                                 Range                                 |
-| ----- | --------------------------------------------------------------------- |
-| `f16` | [`≈ 0.00006103515625` to `65504`][f16-wikipedia]                      |
-| `f32` | [`≈ 1.1754943 × 10^−38` to `≈ 3.4028235 × 10^38`][f32-wikipedia]      |
-| `f64` | [`≈ 2.2250738 × 10^−308` to `≈ 1.7976931 × 10^308`][f64-wikipedia]    |
-| `f128`| [`≈ 3.3621032 × 10^−4932` to `≈ 1.1897315 × 10^4932`][f128-wikipedia] |
+|  Name |                             Range                             |
+| ----- | ------------------------------------------------------------- |
+| `f16` | [`≈ 0.00006103515625` to `65504`][f16-w]                      |
+| `f32` | [`≈ 1.1754943 × 10^−38` to `≈ 3.4028235 × 10^38`][f32-w]      |
+| `f64` | [`≈ 2.2250738 × 10^−308` to `≈ 1.7976931 × 10^308`][f64-w]    |
+| `f128`| [`≈ 3.3621032 × 10^−4932` to `≈ 1.1897315 × 10^4932`][f128-w] |
 
-[f16-wikipedia]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format
-[f32-wikipedia]: https://en.wikipedia.org/wiki/Single-precision_floating-point_format
-[f64-wikipedia]: https://en.wikipedia.org/wiki/Double-precision_floating-point_format
-[f128-wikipedia]: https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format
+[f16-w]: https://en.wikipedia.org/wiki/Half-precision_floating-point_format
+[f32-w]: https://en.wikipedia.org/wiki/Single-precision_floating-point_format
+[f64-w]: https://en.wikipedia.org/wiki/Double-precision_floating-point_format
+[f128-w]: https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format
 
 ## Char
 
