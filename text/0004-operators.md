@@ -49,6 +49,7 @@ We are doing this to clarify operators in Zom and their operator precedence valu
 | `&var` | `Variable borrow`          | `OP_VAR_BORROW`|*Unary* |
 |  `*`   | `Dereferencing`            | `OP_DEREF`     |*Unary* |
 |  `-`   | `Unary minus`              | `OP_MINUS`     |*Unary* |
+|  `+`   | `Unary plus`               | `OP_PLUS`      |*Unary* |
 
 ### Multiplication
 
@@ -162,6 +163,10 @@ e.g: `*a`
 ### Unary minus
 
 e.g: `-a`
+
+### Unary plus
+
+e.g: `+a`
 
 # Deep-dive explenation
 [deep-dive-explenation]: #deep-dive-explenation
